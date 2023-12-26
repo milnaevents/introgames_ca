@@ -1,0 +1,32 @@
+@media(max-width:480px) {
+    .middle-text {
+        padding: 40px 0;
+    }
+    .header {
+        padding: 25px 15px;
+    }
+    .custom-btn {
+        padding: 12px 19px;
+        font-size: 20px;
+    }
+    .card-ul {
+        max-width: 100%;
+        margin: auto;
+        margin-top: 30px;
+    }
+    .content{
+        height: calc(100vh - 248px);
+    }
+    .card-li {
+        padding: 19px;
+    }
+    h3 {
+        font-size: 18px;
+    }
+    .main-footer p{
+        font-size: 14px;
+    }
+    .middle-div{
+        height: 100vh;
+    }
+}
