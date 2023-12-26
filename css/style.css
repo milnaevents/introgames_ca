@@ -45,6 +45,7 @@ h2{
     font-size: 35px;
     font-family: Poppins-Bold;
 }
+
 h3{
     font-size: 22px;
     font-family: Poppins-SemiBold;
@@ -185,15 +186,21 @@ h3{
     background-color: var(--red);
 }
 
+.time-with-button {
+    position: absolute;
+    bottom: 5%;
+    width: 90%;
+}
+
 .custom-button {  
     font-family: Poppins-SemiBold;
-    font-size: 25px;
-    width: 100%;
+    font-size: 22px;
     color: var(--whitecolor);
     border-radius: 48px;
     border-color: transparent;
-    margin-top: 17px;
+    margin-top: 8px;
     height: 60px;
+    width: 100%;
 }
 
 button:focus{
@@ -202,6 +209,7 @@ button:focus{
 }
 .sidebar-descrption h2{
     color: var(--greencolor);
+    font-size: 24px;
 }
 .sidebar-descrption p {
     margin-top: 38px;
@@ -212,7 +220,7 @@ button:focus{
 }
 .time span {
     font-family: Poppins-SemiBold;
-    font-size: 20px;
+    font-size: 18px;
     color: var(--dark-gray);
    
 }
@@ -229,7 +237,6 @@ button:focus{
     padding: 0 15px;
 }
 .middle-text {
-    padding: 100px 0;
     color: var(--light-green);
     font-size: 50px;
     font-family: Poppins-Medium;
@@ -262,4 +269,9 @@ button:focus{
 
 #one-on-one.right.custom-btn.nav-link.active {
     color: var(--darkgreencolor);
+}
+
+.topictext {
+    align: center;
+    font-size: 30px;
 }
