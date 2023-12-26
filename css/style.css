@@ -37,7 +37,7 @@ body{
 
 p{
     color: var(--gray);
-    font-size: 14px;
+    font-size: 16px;
     margin-bottom: 0;
 }
 h2{
@@ -190,6 +190,14 @@ h3{
     position: absolute;
     bottom: 5%;
     width: 90%;
+    margin-left:5%;
+}
+
+.unstartedPanel {
+    position: absolute;
+    bottom: 5%;
+    width: 90%;
+    margin-left:5%;
 }
 
 .custom-button {  
@@ -211,8 +219,12 @@ button:focus{
     color: var(--greencolor);
     font-size: 24px;
 }
-.sidebar-descrption p {
+.gamedescription {
     margin-top: 38px;
+    padding-left: 5%;
+    padding-right: 5%;
+    position: absolute;
+    height: 40%; /* TODO: change this to be adjusted per javascript calculation and make it ID specific rather than class.*/
 }
 
 .sidebar-descrption h2 {
@@ -274,4 +286,5 @@ button:focus{
 .topictext {
     align: center;
     font-size: 30px;
+    padding-bottom: 3%;
 }

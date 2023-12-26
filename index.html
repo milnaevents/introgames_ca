@@ -77,31 +77,56 @@
                     <p>Easy ice-breaker games.</p>
                 </footer>
             </div>
+            
+            <!-- Word Connections Page -->
+            
             <div class="sidebar-content" id="w-connection">
                 <div class="text-end px-4">
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                 </div>
                 <div class="sidebar-descrption">
                     <h2 class="text-center">Word Connections</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-                    <!-- <div class="divider text-center">
-                        <span></span>
-                        <span></span>
-                    </div> -->
-
-                    <div class="time-with-button">
-                        <div class="text-center middle-text">
-                            <h4 class="topictext">Robots</h4>
-                        </div>
-
-                        <div class="time text-center">
-                            <span>8:00</span>
-                        </div>
-                        <button class="yellow-button custom-button">Next</button>
-                    </div>
+                </div>
+                <div id="wordConnectionsDescription" class="gamedescription" style="overflow:auto">
+                    <p>
+                        <b>Game Setup</b>
+                        <ul>
+                            <li>Player 1 presses <i>Start</i> button and announces first word</li>
+                            <li>Rotate clockwise, each person says one word at a time</li>
+                        </ul>
+                        <b>Rules</b>
+                        <ol>
+                            <li>Word must be related to previous word (and can be unrelated to first word)</li>
+                            <li>Cannot repeat word during same sequence</li>
+                            <li>Max 5 seconds per turn</li>
+                        </ol>
+                        If any rule is broken, start again by pressing <i>Next</i> button.
+                        <br><br>
+                        <b><i>Example:</i></b> Balloon -> Red -> Stop -> Sign -> Indicator -> Light -> Bulb -> Glass -> Window -> ZIPPER (unrelated)
+                    </p>
+                </div>
                     
+                <div id="unstartedWordConnectionsPanel" class="unstartedPanel">
+                    <button class="blue-button custom-button start-button">Start</button>
+                </div>
+                    
+
+                <div id="startedWordConnectionsPanel" class="time-with-button" style="display:none">
+                    <div class="text-center middle-text">
+                        <h4 id="WordConnectionsTextID" class="topictext">Robots</h4>
+                    </div>
+
+                    <div class="time text-center">
+                        <span class="timervalue">8:00</span>
+                    </div>
+                    <button id="NextWordConnectionButton" class="yellow-button custom-button">Next</button>
                 </div>
             </div>
+
+            <!-- No English Page -->
+
+
+
             <div class="sidebar-content" id="noenglish">
                 <div class="text-end px-4">
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
