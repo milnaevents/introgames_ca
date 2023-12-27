@@ -19,7 +19,7 @@ function activateSidebar(clickObj, nearbyID){
 }
 
 function resetPanelVisuals(descID, startedID, unstartedID){
-	$(descID).css("height", "auto");
+	$(descID).css("height", "60%");
 	$(startedID).hide();
 	$(unstartedID).show();
 }

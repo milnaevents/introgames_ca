@@ -34,11 +34,16 @@ body{
 
 }
 
-p{
+.gamedescription {
     color: var(--gray);
-    font-size: 16px;
+    font-size: 14px;
     margin-bottom: 0;
 }
+
+.card-text{
+    font-size: 15px;
+}
+
 h2{
     color: var(--whitecolor);
     font-size: 35px;
@@ -52,7 +57,7 @@ h3{
 }
 .header{
     background: var(--green-transparent);
-    padding: 36px 0 24px 0;
+    padding: 20px 0 20px 0;
     position: relative;
 }
 .header::after,.header::before  {
@@ -187,14 +192,14 @@ h3{
 
 .time-with-button {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     width: 90%;
     margin-left:5%;
 }
 
 .unstartedPanel {
     position: absolute;
-    bottom: 5%;
+    bottom: 15%;
     width: 90%;
     margin-left:5%;
 }
@@ -222,7 +227,7 @@ button:focus{
     margin-top: 18px;
     padding-left: 10%;
     padding-right: 10%;
-    position: absolute;
+    height: 60%;
 }
 
 .sidebar-descrption h2 {
