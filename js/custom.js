@@ -95,12 +95,12 @@ $(document).ready(function(){
 
 	$("#overkill-card").click(function(){
 		activateSidebar(this, "#overkill");
-		ACTIVE_GAME_INDEX = GAME_NOENGLISH_INDEX;
+		ACTIVE_GAME_INDEX = GAME_OVERKILL_INDEX;
 	})
 
 	$("#saywithoutsaying-card").click(function(){
 		activateSidebar(this, "#saywithoutsaying");
-		ACTIVE_GAME_INDEX = GAME_NOENGLISH_INDEX;
+		ACTIVE_GAME_INDEX = GAME_SAYWITHOUTSAYING_INDEX;
 	})
 
 

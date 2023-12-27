@@ -175,6 +175,101 @@
                 </div>
             </div>
 
+            <!-- Overkill Page -->
+            
+            <div class="sidebar-content" id="overkill">
+                
+                <div class="sidebar-descrption">
+                    <div class="sidebartitle">
+                        <h2>Overkill</h2>
+                    </div>
+                    <div class="sidebarclose">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div id="overkillDescription" class="gamedescription" style="overflow:auto">
+                    <p>
+                        <i>List every item you can think of that fits the category, without repeating.</i><br><br>
+                        <b>Game Setup</b>
+                        <ul>
+                            <li>Player 1 presses <i>Start</i> button and announces topic</li>
+                            <li>Rotate clockwise, each person says one item at a time</li>
+                        </ul>
+                        <b>Rules</b>
+                        <ol>
+                            <li>Word must be related to topic</li>
+                            <li>Cannot repeat answer during same sequence</li>
+                            <li>Max 5 seconds per turn</li>
+                        </ol>
+                        If a rule gets broken, we say <i>Overkill</i>. Start again by pressing <i>Next</i> button.
+                        <br><br>
+                        <u><b>Example (Fruits)</b></u>
+                        <br>
+                        Apple, pear, banana, kiwi, orange, strawberry, <s>banana</s> (cannot say banana again)
+                    </p>
+                </div>
+                    
+                <div class="unstartedPanel">
+                    <button class="blue-button custom-button start-button">Start</button>
+                </div>
+                    
+
+                <div id="overkillStartedPanel" class="time-with-button startedPanel" style="display:none">
+                    <div class="text-center middle-text">
+                        <h4 id="overkillTextID" class="topictext">Overkill topic</h4>
+                    </div>
+
+                    <div class="time text-center">
+                        <span class="timervalue">00:00</span>
+                    </div>
+                    <button class="yellow-button custom-button next-button">Next</button>
+                </div>
+            </div>
+
+            <!-- Say without Saying Page -->
+            
+            <div class="sidebar-content" id="saywithoutsaying">
+                
+                <div class="sidebar-descrption">
+                    <div class="sidebartitle">
+                        <h2>Say without Saying</h2>
+                    </div>
+                    <div class="sidebarclose">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div id="saywithoutsayingDescription" class="gamedescription" style="overflow:auto">
+                    <p>
+                        This game is kind of like charades. Your goal is to get the other person to guess the word on your screen without revealing the secret word. Give one hint at a time, until a maximum of 5 hints. One guess allowed per hint.
+                        <br><br>
+                        <b>Example Secret Word: Pizza</b>
+                        <ul>
+                            <li>1-word hint: slice</li>
+                            <li>2-word hint: slice, cheese</li>
+                            <li>3-word hint: slice, cheese, sauce</li>
+                        </ul>
+                        When the secret word has been guessed, switch roles, and start again by pressing <i>Next</i>.
+                        <br>
+                    </p>
+                </div>
+                    
+                <div class="unstartedPanel">
+                    <button class="blue-button custom-button start-button">Start</button>
+                </div>
+                    
+
+                <div id="saywithoutsayingStartedPanel" class="time-with-button startedPanel" style="display:none">
+                    <div class="text-center middle-text">
+                        <h4 id="saywithoutsayingTextID" class="topictext">saywithoutsaying topic</h4>
+                    </div>
+
+                    <div class="time text-center">
+                        <span class="timervalue">00:00</span>
+                    </div>
+                    <button class="yellow-button custom-button next-button">Next</button>
+                </div>
+            </div>
+
             <!-- No English Page -->
             <div class="sidebar-content" id="noenglish">
                 <div class="sidebar-descrption">
