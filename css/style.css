@@ -250,9 +250,11 @@ button:focus{
 .sidebartitle{
     display: inline-block;
     vertical-align: middle;
-    width: 70%;
     text-align: start;
     padding-left: 10%;
+    padding-right: 2%;
+    margin-right: 0px;
+    width: 80%;
 }
 
 .sidebarclose{
