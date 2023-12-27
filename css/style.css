@@ -1,16 +1,12 @@
-html {
-    overflow: hidden;
-    width: 100%;
+html, body {
+    height: 100vh;    
+    overflow-y: hidden;
 }
 
 body{
     font-family: Poppins-Regular;
-    height: 100%;
-    position: fixed;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-}
 
+}
 @font-face {
     font-family: Poppins-Regular;
     src: url(../fonts/Poppins-Regular.ttf);
