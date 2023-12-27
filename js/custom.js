@@ -18,21 +18,34 @@ function activateSidebar(clickObj, nearbyID){
 	$(clickObj).closest(".middle-div").find(nearbyID).addClass("active");
 }
 
-function resetPanelVisuals(descID, startedID, unstartedID){
-	$(descID).css("height", "60%");
-	$(startedID).hide();
-	$(unstartedID).show();
+function resetPanelVisuals(){
+	//reset the description height back to 60%
+	var descriptions = document.getElementsByClassName("gamedescription");
+	for (var i = 0; i < descriptions.length; i++) {
+		$(descriptions[i]).css("height", "60%");
+	}
+
+	//hide the started panels
+	var startedPanels = document.getElementsByClassName("startedPanel");
+	for (var i = 0; i < descriptions.length; i++) {
+		$(startedPanels[i]).hide();
+	}
+
+	//show the unstarted panels
+	var unstartedPanels = document.getElementsByClassName("unstartedPanel");
+	for (var i = 0; i < descriptions.length; i++) {
+		$(unstartedPanels[i]).show();
+	}
 }
 
 function deactivateSidebars(clickObj){
 	clearTimer();
-	
+	resetPanelVisuals();
+
 	//Word Connections
-	resetPanelVisuals("#wordConnectionsDescription", "#startedWordConnectionsPanel", "#unstartedWordConnectionsPanel");
 	$(clickObj).closest(".middle-div").find("#w-connection").removeClass("active");
 	
 	//No English
-	resetPanelVisuals("#noenglishDescription", "#startedNoEnglishPanel", "#unstartedNoEnglishPanel");
 	$(clickObj).closest(".middle-div").find("#noenglish").removeClass("active");
 }
 
@@ -71,7 +84,7 @@ $(document).ready(function(){
 		clearInterval(startTimer);	
 		$(this).parent().hide();
 		$(this).parent().fadeIn(500);
-		resetPanelVisuals("#noenglishDescription", "#startedNoEnglishPanel", "#unstartedNoEnglishPanel");
+		resetPanelVisuals();
 		
 	})
    
