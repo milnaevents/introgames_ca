@@ -1,11 +1,5 @@
-html, body {
-    height: 100vh;    
-    overflow-y: hidden;
-}
-
 body{
     font-family: Poppins-Regular;
-
 }
 @font-face {
     font-family: Poppins-Regular;
