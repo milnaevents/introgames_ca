@@ -224,7 +224,6 @@ button:focus{
     padding-left: 5%;
     padding-right: 5%;
     position: absolute;
-    height: 40%; /* TODO: change this to be adjusted per javascript calculation and make it ID specific rather than class.*/
 }
 
 .sidebar-descrption h2 {
