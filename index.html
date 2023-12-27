@@ -118,16 +118,52 @@
                     </div>
 
                     <div class="time text-center">
-                        <span id= "wordConnectionsTimerText" class="timervalue">0:00</span>
+                        <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
                     </div>
-                    <button id="NextWordConnectionButton" class="yellow-button custom-button">Next</button>
+                    <button class="yellow-button custom-button next-button">Next</button>
                 </div>
             </div>
 
             <!-- No English Page -->
+            <div class="sidebar-content" id="noenglish">
+                <div class="text-end px-4">
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="sidebar-descrption">
+                    <h2 class="text-center">No English</h2>
+                </div>
+                <div id="noenglishDescription" class="gamedescription" style="overflow:auto">
+                    <p>
+                        <b>Game Setup</b>
+                        <ul>
+                            <li>item 1</li>
+                        </ul>
+                        <b>Rules</b>
+                        <ol>
+                            <li>rule 1</li>
+                        </ol>
+                        <br><br>
+                    </p>
+                </div>
+                    
+                <div id="unstartedNoEnglishPanel" class="unstartedPanel">
+                    <div class="time text-center">
+                        <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
+                    </div>
+                    <button class="blue-button custom-button start-button">Start</button>
+                </div>
+                    
+
+                <div id="startedNoEnglishPanel" class="time-with-button" style="display:none">
+                    <div class="time text-center">
+                        <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
+                    </div>
+                    <button class="red-button custom-button stop-button">Stop</button>
+                </div>
+            </div>
 
 
-
+            <!-- No English old
             <div class="sidebar-content" id="noenglish">
                 <div class="text-end px-4">
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -149,7 +185,7 @@
                     </div>
                 </div>
             </div>
-           
+           -->
         </div>
     </div>
     <script src="js/custom.js" type="text/javascript"></script>

@@ -4,6 +4,9 @@ GAME_NAME3_INDEX = 1;
 GAME_OVERKILL_INDEX = 2;
 GAME_SAYWITHOUTSAYING_INDEX = 3;
 GAME_NOENGLISH_INDEX = 4;
+GAME_COUNT_INACTIVE = 5;
+
+ACTIVE_GAME_INDEX = GAME_COUNT_INACTIVE;
 
 //word connection strings array
 TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", "Mouse", "Grass", "Books", "Computer","Carrot","Uncle","Cousin","Truck", "Bucket", "Coffee","Bus", "Backpack","Pencil", "Phone", "Spring", "Soccer", "Ball", "Tape", "Bird", "Vitamin", "Radio", "Online"
@@ -11,44 +14,65 @@ TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", 
 
 UNUSED_WORDCONNECTIONS = TOPICS_WORDCONNECTIONS.slice();
 
+function activateSidebar(clickObj, nearbyID){
+	$(clickObj).closest(".middle-div").find(nearbyID).addClass("active");
+}
+
+function resetPanelVisuals(descID, startedID, unstartedID){
+	$(descID).css("height", "auto");
+	$(startedID).hide();
+	$(unstartedID).show();
+}
+
+function deactivateSidebars(clickObj){
+	clearTimer();
+	
+	//Word Connections
+	resetPanelVisuals("#wordConnectionsDescription", "#startedWordConnectionsPanel", "#unstartedWordConnectionsPanel");
+	$(clickObj).closest(".middle-div").find("#w-connection").removeClass("active");
+	
+	//No English
+	resetPanelVisuals("#noenglishDescription", "#startedNoEnglishPanel", "#unstartedNoEnglishPanel");
+	$(clickObj).closest(".middle-div").find("#noenglish").removeClass("active");
+}
+
+
 
 $(document).ready(function(){
-	$("#word-connection").click(function(){
-		$(this).closest(".middle-div").find("#w-connection").addClass("active")
-	})
-   
+	//clicking close-x on any sidebar, regardless of game
 	$(".btn-close").click(function(){
-		$(this).closest(".middle-div").find("#w-connection").removeClass("active");
-		//reset the page and timer
-		clearTimer();
-		$("#wordConnectionsDescription").css("height", "auto");
-		$("#startedWordConnectionsPanel").hide();
-		$("#unstartedWordConnectionsPanel").show();
+		deactivateSidebars(this);
+		ACTIVE_GAME_INDEX = GAME_COUNT_INACTIVE;
+	})	
+
+	$("#word-connection").click(function(){
+		activateSidebar(this, "#w-connection");
+		ACTIVE_GAME_INDEX = GAME_WORDCONNECTIONS_INDEX;
 	})
    
 	$("#no-english").click(function(){
-		$(this).closest(".middle-div").find("#noenglish").addClass("active")
+		activateSidebar(this, "#noenglish");
+		ACTIVE_GAME_INDEX = GAME_NOENGLISH_INDEX;
 	})
 	
-	$(".btn-close").click(function(){
-		$(this).closest(".middle-div").find("#noenglish").removeClass("active")
-	})
 
-	//Word connections start button press
 	$(".start-button").click(function(){
 		$(this).parent().fadeOut(400);
-		//Get word from dicitionary and replace it's text
-		SetNextTopic(GAME_WORDCONNECTIONS_INDEX, "#WordConnectionsTextID");
-		$("#startedWordConnectionsPanel").fadeIn(400);
-		$("#wordConnectionsDescription").css("height", "40%");
+		SetNextTopic();
 	})
 
-	$("#NextWordConnectionButton").click(function() {
+	$(".next-button").click(function() {
 		$(this).parent().hide();
-
 		$(this).parent().fadeIn(500);
-	
-		SetNextTopic(GAME_WORDCONNECTIONS_INDEX, "#WordConnectionsTextID");
+		SetNextTopic();
+	})
+
+	$(".stop-button").click(function() {
+		clearInterval(startTimer);	
+		$(this).parent().hide();
+		$(this).parent().fadeIn(500);
+		resetPanelVisuals("#noenglishDescription", "#startedNoEnglishPanel", "#unstartedNoEnglishPanel");
+		
 	})
    
 })
@@ -72,14 +96,18 @@ function getNextTopic(){
 	return returnTopic;
 }
 
-function SetNextTopic(gameIndex, textObjectID){
+function SetNextTopic(){
 	clearTimer();
-	if(gameIndex == GAME_WORDCONNECTIONS_INDEX){
+	if(ACTIVE_GAME_INDEX == GAME_WORDCONNECTIONS_INDEX){
 		var topic = getNextTopic();
-		$(textObjectID).text(topic);
-	} else {
-		$(textObjectID).text("testing2");
+		$("#WordConnectionsTextID").text(topic);
+		$("#startedWordConnectionsPanel").fadeIn(400);
+		$("#wordConnectionsDescription").css("height", "40%");
+	} else if(ACTIVE_GAME_INDEX == GAME_NOENGLISH_INDEX){
+		$("#startedNoEnglishPanel").fadeIn(400);
 	}
+	//todo: other games types
+
 	startTimer = setInterval(updateTimer, 1000);
 }
 
@@ -105,7 +133,7 @@ function convertToMinSec(num) {
 	}
 }
 
-var timer = document.getElementById("wordConnectionsTimerText");
+var timerTexts = document.getElementsByClassName("timervalue");
 
 // Set the initial time in seconds
 var timeElapsed = 0;
@@ -113,7 +141,10 @@ var timeElapsed = 0;
 let startTimer;
 
 function clearTimer() {
-	timer.innerHTML = convertToMinSec(0);
+	for (var i = 0; i < timerTexts.length; i++) {
+		timerTexts[i].innerHTML = convertToMinSec(0);
+	}
+	
 	timeElapsed = 0;
 	clearInterval(startTimer);
 }
@@ -121,5 +152,7 @@ function clearTimer() {
 function updateTimer(){
 	// Display the time in the timer element
 	timeElapsed++;
-	timer.innerHTML = convertToMinSec(timeElapsed);
+	for (var i = 0; i < timerTexts.length; i++) {
+		timerTexts[i].innerHTML = convertToMinSec(timeElapsed);
+	}
 }
