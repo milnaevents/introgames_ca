@@ -8,11 +8,28 @@ GAME_COUNT_INACTIVE = 5;
 
 ACTIVE_GAME_INDEX = GAME_COUNT_INACTIVE;
 
-//word connection strings array
+UNUSED_TOPICS = [];
+
+//word connections
 TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", "Mouse", "Grass", "Books", "Computer","Carrot","Uncle","Cousin","Truck", "Bucket", "Coffee","Bus", "Backpack","Pencil", "Phone", "Spring", "Soccer", "Ball", "Tape", "Bird", "Vitamin", "Radio", "Online"
 ];
 
-UNUSED_WORDCONNECTIONS = TOPICS_WORDCONNECTIONS.slice();
+
+//Name 3 
+NAME3_BASESTRING = "Name 3 ";
+
+TOPICS_NAME3 = [ "Spices", "T-Shirt Sizes", "Cellular Service Providers", "Shoe Companies", "Laptop manufacturers", "Vitamins", "Airlines", "Cities", "Pets", "Chocolate Brands", "Water bottle companies", "Types of Bread", "Kitchen Appliances", "Countries", "Spoken Languages", "Social Media Apps", "Cuisines", "Male Actors", "Sports", "TV Shows"
+];
+
+
+//Overkill 
+TOPICS_OVERKILL = [ "Male Actors", "Female Actors", "Movies", "Sports", "TV Shows", "Cartoons", "Animals", "Clothing Brands", "Smartphone Makers"
+];
+
+//Say Without Saying
+TOPICS_SAYWITHOUTSAYING = [ "Samosa", "Pen", "Headphones", "Doctor"
+];
+
 
 function activateSidebar(clickObj, nearbyID){
 	$(clickObj).closest(".middle-div").find(nearbyID).addClass("active");
@@ -42,11 +59,14 @@ function deactivateSidebars(clickObj){
 	clearTimer();
 	resetPanelVisuals();
 
-	//Word Connections
+	//remove the active class from each of the sidebar pages
 	$(clickObj).closest(".middle-div").find("#w-connection").removeClass("active");
-	
-	//No English
 	$(clickObj).closest(".middle-div").find("#noenglish").removeClass("active");
+	$(clickObj).closest(".middle-div").find("#name3_page").removeClass("active");
+	$(clickObj).closest(".middle-div").find("#overkill").removeClass("active");
+	$(clickObj).closest(".middle-div").find("#saywithoutsaying").removeClass("active");
+
+	UNUSED_TOPICS = [];
 }
 
 
@@ -58,15 +78,32 @@ $(document).ready(function(){
 		ACTIVE_GAME_INDEX = GAME_COUNT_INACTIVE;
 	})	
 
-	$("#word-connection").click(function(){
+	$("#word-connection-card").click(function(){
 		activateSidebar(this, "#w-connection");
 		ACTIVE_GAME_INDEX = GAME_WORDCONNECTIONS_INDEX;
 	})
+
+	$("#name3-card").click(function(){
+		activateSidebar(this, "#name3_page");
+		ACTIVE_GAME_INDEX = GAME_NAME3_INDEX;
+	})
    
-	$("#no-english").click(function(){
+	$("#no-english-card").click(function(){
 		activateSidebar(this, "#noenglish");
 		ACTIVE_GAME_INDEX = GAME_NOENGLISH_INDEX;
 	})
+
+	$("#overkill-card").click(function(){
+		activateSidebar(this, "#overkill");
+		ACTIVE_GAME_INDEX = GAME_NOENGLISH_INDEX;
+	})
+
+	$("#saywithoutsaying-card").click(function(){
+		activateSidebar(this, "#saywithoutsaying");
+		ACTIVE_GAME_INDEX = GAME_NOENGLISH_INDEX;
+	})
+
+
 	
 
 	$(".start-button").click(function(){
@@ -94,32 +131,69 @@ function getRandomInt(totalItems){
 	return Math.floor(Math.random() * totalItems);
 }
 
+//we want to ensure the next random topic was unused in the current session so far
 function getNextTopic(){
-	if(UNUSED_WORDCONNECTIONS.length < 2){
-		UNUSED_WORDCONNECTIONS = TOPICS_WORDCONNECTIONS.slice();
-	}
+	var randomInt, returnTopic;
 	
-	//we want to ensure the same topics don't reappear
-	var randomInt = getRandomInt(UNUSED_WORDCONNECTIONS.length);
-	var returnTopic = UNUSED_WORDCONNECTIONS[randomInt];
+	switch(ACTIVE_GAME_INDEX) {
+		case GAME_WORDCONNECTIONS_INDEX:
+			if(UNUSED_TOPICS.length < 2){
+				UNUSED_TOPICS = TOPICS_WORDCONNECTIONS.slice();
+			}
+			
+		case GAME_NAME3_INDEX:
+			if(UNUSED_TOPICS.length < 2){
+				UNUSED_TOPICS = TOPICS_NAME3.slice();
+			}
+			
+		case GAME_OVERKILL_INDEX:
+			if(UNUSED_TOPICS.length < 2){
+				UNUSED_TOPICS = TOPICS_OVERKILL.slice();
+			}
+		case GAME_SAYWITHOUTSAYING_INDEX:
+			if(UNUSED_TOPICS.length < 2){
+				UNUSED_TOPICS = TOPICS_SAYWITHOUTSAYING.slice();
+			}
+	}
 
-	UNUSED_WORDCONNECTIONS[randomInt] = "";
-	UNUSED_WORDCONNECTIONS = UNUSED_WORDCONNECTIONS.filter(a => {return a});
+	randomInt = getRandomInt(UNUSED_TOPICS.length);
+	returnTopic = UNUSED_TOPICS[randomInt];
+
+	UNUSED_TOPICS[randomInt] = "";
+	UNUSED_TOPICS = UNUSED_TOPICS.filter(a => {return a});
 
 	return returnTopic;
 }
 
+function ApplyTopicToHTML(t){
+	var topictexts = document.getElementsByClassName("topictext");
+	for (var i = 0; i < topictexts.length; i++) {
+		$(topictexts[i]).text(t);
+	}
+
+	var startedPanels = document.getElementsByClassName("startedPanel");
+	for (var i = 0; i < startedPanels.length; i++) {
+		$(startedPanels[i]).fadeIn(400);
+	}
+
+	var descriptions = document.getElementsByClassName("gamedescription");
+	for (var i = 0; i < descriptions.length; i++) {
+		$(descriptions[i]).css("height", "40%");
+	}
+}
+
+
 function SetNextTopic(){
 	clearTimer();
-	if(ACTIVE_GAME_INDEX == GAME_WORDCONNECTIONS_INDEX){
-		var topic = getNextTopic();
-		$("#WordConnectionsTextID").text(topic);
-		$("#startedWordConnectionsPanel").fadeIn(400);
-		$("#wordConnectionsDescription").css("height", "40%");
-	} else if(ACTIVE_GAME_INDEX == GAME_NOENGLISH_INDEX){
+	var topic = getNextTopic();
+
+
+	if(ACTIVE_GAME_INDEX == GAME_NOENGLISH_INDEX){
+		//no english is the only game without topics
 		$("#startedNoEnglishPanel").fadeIn(400);
+	} else {
+		ApplyTopicToHTML(topic);
 	}
-	//todo: other games types
 
 	startTimer = setInterval(updateTimer, 1000);
 }

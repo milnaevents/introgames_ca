@@ -24,7 +24,7 @@
                 </div>
                 <div class="content tab-content" id="myTabContent">
                         <div class="card-ul tab-pane fade show active" id="group-pane" role="tabpanel" aria-labelledby="group" tabindex="0">
-                            <div class="card card-li" id="word-connection">
+                            <div class="card card-li" id="word-connection-card">
                                 <div class="card-icon d-flex">
                                     <img width="38" height="38" class="img-fluid" src="images/Group-1.png" alt="word icon" title="word">
                                     <h3>Word Connections</h3>
@@ -33,7 +33,7 @@
                                     Say a word that connects or relates to the previous word.
                                 </p>
                             </div>
-                            <div class="card card-li">
+                            <div class="card card-li" id="name3-card">
                                 <div class="card-icon d-flex">
                                     <img width="38" height="38" class="img-fluid" src="images/Group-2.png" alt="languages icon" title="languages">
                                     <h3>Name 3 ...</h3>
@@ -42,7 +42,7 @@
                                     Name 3 people, places, or things.
                                 </p>
                             </div>
-                            <div class="card card-li">
+                            <div class="card card-li" id="overkill-card">
                                 <div class="card-icon d-flex">
                                     <img width="38" height="38" class="img-fluid" src="images/Group-3.png" alt="chat icon" title="chat">
                                     <h3>Overkill</h3>
@@ -53,7 +53,7 @@
                             </div>
                         </div>
                         <div class="card-ul tab-pane fade" id="one-on-one-pane" role="tabpanel" aria-labelledby="one-on-one" tabindex="0">
-                            <div class="card card-li">
+                            <div class="card card-li" id="saywithoutsaying-card">
                                 <div class="card-icon d-flex">
                                     <img width="38" height="38" class="img-fluid" src="images/question.png" alt="question icon" title="question">
                                     <h3>Say without Saying</h3>
@@ -62,7 +62,7 @@
                                     Other person has to guess the secret word with the least number of hints.
                                 </p>
                             </div>
-                            <div class="card card-li" id="no-english">
+                            <div class="card card-li" id="no-english-card">
                                 <div class="card-icon d-flex">
                                     <img width="38" height="38" class="img-fluid" src="images/languages.png" alt="languages icon" title="languages">
                                     <h3>No English</h3>
@@ -122,6 +122,54 @@
 
                     <div class="time text-center">
                         <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
+                    </div>
+                    <button class="yellow-button custom-button next-button">Next</button>
+                </div>
+            </div>
+
+            <!-- Name 3 Page -->
+            
+            <div class="sidebar-content" id="name3_page">
+                
+                <div class="sidebar-descrption">
+                    <div class="sidebartitle">
+                        <h2>Name 3 ...</h2>
+                    </div>
+                    <div class="sidebarclose">
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                </div>
+                <div id="name3Description" class="gamedescription" style="overflow:auto">
+                    <p>
+                        <b>Game Setup</b>
+                        <ul>
+                            <li>Player 1 presses <i>Start</i> button and announces topic</li>
+                            <li>Rotate clockwise, each person says one item at a time</li>
+                            <li>When 3 items have been said, next person announces next topic</li>
+                        </ul>
+                        <b>Rules</b>
+                        <ol>
+                            <li>Word must be related to topic</li>
+                            <li>Cannot repeat answer during same sequence</li>
+                            <li>Max 5 seconds per turn</li>
+                        </ol>
+                        If 3 items reached, or rule broken, start again by pressing <i>Next</i> button.
+                        <br>
+                    </p>
+                </div>
+                    
+                <div class="unstartedPanel">
+                    <button class="blue-button custom-button start-button">Start</button>
+                </div>
+                    
+
+                <div id="name3StartedPanel" class="time-with-button startedPanel" style="display:none">
+                    <div class="text-center middle-text">
+                        <h4 id="Name3TextID" class="topictext">Name 3 topic</h4>
+                    </div>
+
+                    <div class="time text-center">
+                        <span class="timervalue">00:00</span>
                     </div>
                     <button class="yellow-button custom-button next-button">Next</button>
                 </div>
