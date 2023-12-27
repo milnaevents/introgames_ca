@@ -11,23 +11,20 @@ ACTIVE_GAME_INDEX = GAME_COUNT_INACTIVE;
 UNUSED_TOPICS = [];
 
 //word connections
-TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", "Mouse", "Grass", "Books", "Computer","Carrot","Uncle","Cousin","Truck", "Bucket", "Coffee","Bus", "Backpack","Pencil", "Phone", "Spring", "Soccer", "Ball", "Tape", "Bird", "Vitamin", "Radio", "Online"
+TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", "Mouse", "Grass", "Books", "Computer","Carrot","Uncle","Cousin","Truck", "Bucket", "Coffee","Bus", "Backpack","Pencil", "Phone", "Spring", "Soccer", "Ball", "Tape", "Bird", "Vitamin", "Radio", "Online", "Selife", "Netflix", "Homework", "Song", "Poem", "YouTube", "Starbucks", "Sweater", "Covid", "Vaccine", "Video", "Zoom", "Pizza", "Pasta", "Tomato", "Pineapple", "Birthday", "Party", "Cards"
 ];
 
 
-//Name 3 
+
 NAME3_BASESTRING = "Name 3 ";
 
-TOPICS_NAME3 = [ "Spices", "T-Shirt Sizes", "Cellular Service Providers", "Shoe Companies", "Laptop manufacturers", "Vitamins", "Airlines", "Cities", "Pets", "Chocolate Brands", "Water bottle companies", "Types of Bread", "Kitchen Appliances", "Countries", "Spoken Languages", "Social Media Apps", "Cuisines", "Male Actors", "Sports", "TV Shows"
+//Name 3 and Overkill combined
+TOPICS_NAME3 = [ "Cooking Spices", "T-Shirt Sizes", "Cellular Service Providers", "Shoe Companies", "Laptop manufacturers", "Vitamins", "Airlines", "Cities", "Pets", "Chocolate Brands", "Water bottle companies", "Types of Bread", "Kitchen Appliances", "Countries", "Spoken Languages", "Social Media Apps", "Cuisines", "Male Actors", "TV Shows", "Colors", "Car Brands", "Female Actors", "Movies", "Sports", "Cartoons", "Animals", "Clothing Brands", "Smartphone Brands", "Singers", "Authors", "Superheroes", "News Channels", "Outdoor Activities", "School Subjects", "Geometric Shapes", "Musical Instruments", "Rivers", "Lakes"
 ];
 
-
-//Overkill 
-TOPICS_OVERKILL = [ "Male Actors", "Female Actors", "Movies", "Sports", "TV Shows", "Cartoons", "Animals", "Clothing Brands", "Smartphone Makers"
-];
 
 //Say Without Saying
-TOPICS_SAYWITHOUTSAYING = [ "Samosa", "Pen", "Headphones", "Doctor"
+TOPICS_SAYWITHOUTSAYING = [ "Samosa", "Pen", "Headphones", "Doctor", "Architect", "Developer", "Accountant", "Lawyer", "Gum", "Balloon", "Birthday", "Lyrics", "Cards", "Fish", "Bagel", "Cheese", "Grapes", "Orange", "Apple", "Google", "Friendship", "Kindness", "Vitamin", "Wedding", "Bride", "Groom", "Parents", "Uncle", "Sister", "Brother", "Juice", "Chocolate", "Sugar", "Salt", "Pepper", "Almonds", "Liquid", "Swimming", "Yoga", "Hiking", "Cycling", "Cricket", "Baseball", "Bat", "Ball", "Badminton", "Tennis", "Football", "Smell", "Taste", "Touch", "Race"
 ];
 
 
@@ -148,7 +145,7 @@ function getNextTopic(){
 			
 		case GAME_OVERKILL_INDEX:
 			if(UNUSED_TOPICS.length < 2){
-				UNUSED_TOPICS = TOPICS_OVERKILL.slice();
+				UNUSED_TOPICS = TOPICS_NAME3.slice(); //overkill uses the same topics as name3
 			}
 		case GAME_SAYWITHOUTSAYING_INDEX:
 			if(UNUSED_TOPICS.length < 2){
