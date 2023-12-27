@@ -223,6 +223,7 @@ button:focus{
     color: var(--greencolor);
     font-size: 24px;
 }
+
 .gamedescription {
     margin-top: 18px;
     padding-left: 10%;
@@ -230,9 +231,6 @@ button:focus{
     height: 60%;
 }
 
-.sidebar-descrption h2 {
-    margin-top: 20px;
-}
 .time span {
     font-family: Poppins-SemiBold;
     font-size: 18px;
@@ -248,9 +246,24 @@ button:focus{
 .divider {
     padding: 100px 0;
 }
-.sidebar-descrption {
-    padding: 0 15px;
+
+.sidebartitle{
+    display: inline-block;
+    vertical-align: middle;
+    width: 70%;
+    text-align: start;
+    padding-left: 10%;
 }
+
+.sidebarclose{
+    display: inline-block;
+    vertical-align: middle;
+    width: auto;
+    float: right;
+    margin-top: 2px;
+    margin-right: 7%;
+}
+
 .middle-text {
     color: var(--light-green);
     font-size: 50px;
