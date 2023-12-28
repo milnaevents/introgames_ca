@@ -14,9 +14,11 @@
         margin: auto;
         margin-top: 10px;
     }
+    /*
     .content{
         height: calc(100vh - 248px);
     }
+    */
     .card-li {
         padding: 19px;
     }
