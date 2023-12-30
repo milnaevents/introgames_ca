@@ -37,7 +37,7 @@
                             <div class="card card-li" id="overkill-card">
                                 <div class="card-icon d-flex">
                                     <img width="38" height="38" class="img-fluid" src="images/Group-3.png" alt="chat icon" title="chat">
-                                    <h3>Overkill</h3>
+                                    <h3>Category Ninja</h3>
                                 </div>
                                 <p class="card-text">
                                     List as many items in the category, without repeating.
@@ -96,7 +96,7 @@
                 </div>
                 <div id="wordConnectionsDescription" class="gamedescription" style="overflow:auto">
                     <p>
-                        <i>Say a word that relates or connects to the previous word. Rotate clockwise, taking turns saying one word.</i>
+                        <i><b>Say a word that relates or connects to the previous word. Rotate clockwise, taking turns saying one word.</b></i>
                         <br>
                         <br>                        
                         <b>Rules</b>
@@ -123,7 +123,7 @@
                     </div>
 
                     <div class="time text-center">
-                        <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
+                        <span>Time Elapsed: </span><span class="timervalue">00:00</span>
                     </div>
                     <button class="yellow-button custom-button next-button">Next</button>
                 </div>
@@ -143,13 +143,13 @@
                 </div>
                 <div id="name3Description" class="gamedescription" style="overflow:auto">
                     <p>
-                        <i>Name 3 items for the topic. Take turns saying one item each, rotating clockwise.</i>
+                        <i><b>Name 3 items for the topic. Take turns saying one item each, rotating clockwise.</b></i>
                         <br>
                         <br>
                         <b>Rules</b>
                         <ol>
                             <li>Word must be related to topic</li>
-                            <li>Cannot repeat answer during same sequence</li>
+                            <li>Cannot repeat answer during same topic</li>
                             <li>Max 10 seconds per response</li>
                         </ol>
                         If any rule is broken or 3 items have completed, press <i>Next</i> to show the next topic.
@@ -168,19 +168,19 @@
                     </div>
 
                     <div class="time text-center">
-                        <span class="timervalue">00:00</span>
+                        <span>Time Elapsed: </span><span class="timervalue">00:00</span>
                     </div>
                     <button class="yellow-button custom-button next-button">Next</button>
                 </div>
             </div>
 
-            <!-- Overkill Page -->
+            <!-- Overkill Page (also known as Category Ninja)-->
             
             <div class="sidebar-content" id="overkill">
                 
                 <div class="sidebar-descrption">
                     <div class="sidebartitle">
-                        <h2>Overkill</h2>
+                        <h2>Category Ninja</h2>
                     </div>
                     <div class="sidebarclose">
                         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -188,15 +188,15 @@
                 </div>
                 <div id="overkillDescription" class="gamedescription" style="overflow:auto">
                     <p>
-                        <i>List every item you can think of that fits the category, without repeating. Take turns rotating clockwise.</i><br><br>
-                        <br>
+                        <i><b>List every item you can think of that fits the category, without repeating. Take turns rotating clockwise.</b></i>
+                        <br><br>
                         <b>Rules</b>
                         <ol>
                             <li>Word must be related to topic</li>
-                            <li>Cannot repeat answer during same sequence</li>
+                            <li>Cannot repeat answer during same topic</li>
                             <li>Max 10 seconds per response</li>
                         </ol>
-                        If a rule gets broken, we say <i>Overkill</i>. Start a new topic by pressing <i>Next</i> button.
+                        If a rule gets broken, start a new topic by pressing <i>Next</i>.
                         <br><br>
                         <u><b>Example (Fruits)</b></u>
                         <br>
@@ -215,7 +215,7 @@
                     </div>
 
                     <div class="time text-center">
-                        <span class="timervalue">00:00</span>
+                        <span>Time Elapsed: </span><span class="timervalue">00:00</span>
                     </div>
                     <button class="yellow-button custom-button next-button">Next</button>
                 </div>
@@ -235,7 +235,7 @@
                 </div>
                 <div id="saywithoutsayingDescription" class="gamedescription" style="overflow:auto">
                     <p>
-                        <i>Your goal is to get the other person to guess the secret word without saying it directly.</i>
+                        <i><b>Your goal is to get the other person to guess the secret word without saying it directly.</b></i>
                         <br>
                         <br>
                         <b>Rules</b>
@@ -268,7 +268,7 @@
                     </div>
 
                     <div class="time text-center">
-                        <span class="timervalue">00:00</span>
+                        <span>Time Elapsed: </span><span class="timervalue">00:00</span>
                     </div>
                     <button class="yellow-button custom-button next-button">Next</button>
                 </div>
@@ -286,7 +286,7 @@
                 </div>
                 <div id="noenglishDescription" class="gamedescription" style="overflow:auto">
                     <p>
-                        <i>Have a conversation in another language for as long as you can, without using a single word in English.</i>
+                        <i><b>Have a conversation in another language for as long as you can, without using a single word in English.</b></i>
                         <br>
                         <br>                        
                         <b>Rules</b>
@@ -301,7 +301,7 @@
                     
                 <div id="unstartedNoEnglishPanel" class="unstartedPanel">
                     <div class="time text-center">
-                        <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
+                        <span>Time Elapsed: </span><span class="timervalue">00:00</span>
                     </div>
                     <button class="blue-button custom-button start-button">Start</button>
                 </div>
@@ -309,7 +309,7 @@
 
                 <div id="startedNoEnglishPanel" class="time-with-button startedPanel" style="display:none">
                     <div class="time text-center">
-                        <span id= "wordConnectionsTimerText" class="timervalue">00:00</span>
+                        <span>Time Elapsed: </span><span class="timervalue">00:00</span>
                     </div>
                     <button class="red-button custom-button stop-button">Stop</button>
                 </div>
