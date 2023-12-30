@@ -11,7 +11,7 @@ ACTIVE_GAME_INDEX = GAME_COUNT_INACTIVE;
 UNUSED_TOPICS = [];
 
 //word connections
-TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", "Mouse", "Grass", "Books", "Computer","Carrot","Uncle","Cousin","Truck", "Bucket", "Coffee","Bus", "Backpack","Pencil", "Phone", "Spring", "Soccer", "Ball", "Tape", "Bird", "Vitamin", "Radio", "Online", "Selife", "Netflix", "Homework", "Song", "Poem", "YouTube", "Starbucks", "Sweater", "Covid", "Vaccine", "Video", "Zoom", "Pizza", "Pasta", "Tomato", "Pineapple", "Birthday", "Party", "Cards"
+TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", "Mouse", "Grass", "Books", "Computer","Carrot","Uncle","Cousin","Truck", "Bucket", "Coffee","Bus", "Backpack","Pencil", "Phone", "Spring", "Soccer", "Ball", "Tape", "Bird", "Vitamin", "Radio", "Online", "Selfie", "Netflix", "Homework", "Song", "Poem", "YouTube", "Starbucks", "Sweater", "Covid", "Vaccine", "Video", "Zoom", "Pizza", "Pasta", "Tomato", "Pineapple", "Birthday", "Party", "Cards"
 ];
 
 
@@ -19,7 +19,11 @@ TOPICS_WORDCONNECTIONS = ["Mother-In-Law", "Monkeys", "Dog", "Spicy", "Pepper", 
 NAME3_BASESTRING = "Name 3 ";
 
 //Name 3 and Overkill combined
-TOPICS_NAME3 = [ "Cooking Spices", "T-Shirt Sizes", "Cellular Service Providers", "Shoe Companies", "Laptop manufacturers", "Vitamins", "Airlines", "Cities", "Pets", "Chocolate Brands", "Water bottle companies", "Types of Bread", "Kitchen Appliances", "Countries", "Spoken Languages", "Social Media Apps", "Cuisines", "Male Actors", "TV Shows", "Colors", "Car Brands", "Female Actors", "Movies", "Sports", "Cartoons", "Animals", "Clothing Brands", "Smartphone Brands", "Singers", "Authors", "Superheroes", "News Channels", "Outdoor Activities", "School Subjects", "Geometric Shapes", "Musical Instruments", "Rivers", "Lakes"
+TOPICS_NAME3 = [ "Cooking Spices", "T-Shirt Sizes", "Cellular Service Providers", "Shoe Companies", "Laptop manufacturers", "Vitamins", "Airlines", "Pets", "Chocolate Brands", "Water bottle companies", "Types of Bread", "Kitchen Appliances", "Spoken Languages", "Social Media Apps", "Cuisines", "Male Actors", "TV Shows", "Colors", "Car Brands", "Female Actors", "Movies", "Sports", "Cartoons", "Animals", "Clothing Brands", "Smartphone Brands", "Male Singers", "Female Singers", "Authors", "Superheroes", "News Channels", "Outdoor Activities", "School Subjects", "Musical Instruments", "Rivers", "Lakes", "Holidays", "Underwear Brands", "TV Screen Brands", "Juices and Soft-Drinks", "Exercise Equipment",
+	"Bedroom items", "Living Room items", "Office Supplies and Furniture", "Things to pack for travel", "Feelings and Emotions", "Math Words", "Science Topics", "Astronomy Words", "Types of Art", "Airport Names", "Big Department Stores", "Online marketplaces", "Plants and Rocks",
+	"Cities in Canada", "Cities in USA", "Cities in India", "Cities in Europe",
+	"Countries in North America", "Countries in South America", "Countries in Europe", "Countries in Asia", "Countries in Africa", "Countries in Middle East",
+	"Provinces in Canada", "States in USA", "States in India"
 ];
 
 
@@ -33,10 +37,10 @@ function activateSidebar(clickObj, nearbyID){
 }
 
 function resetPanelVisuals(){
-	//reset the description height back to 60%
+	//reset the description height back to 67%
 	var descriptions = document.getElementsByClassName("gamedescription");
 	for (var i = 0; i < descriptions.length; i++) {
-		$(descriptions[i]).css("height", "60%");
+		$(descriptions[i]).css("height", "67%");
 	}
 
 	//hide the started panels
